@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+
+        /*
+        1) создали переменную a и присвоили ей значение 2
+        2) создали переменную x и начали ее вычислять
+        3) в скобках "говорится", что значение а(2) нужно умножить на 2 и присвоить к а (а = 2 * 2, результат а = 4)
+        4) 1 прибавить к результату в скобках (1 + 4 = 5)
+        5) к x присвоить результат 5
+        6) теперь переменные равны: a = 4, x = 5
+        */
+        let a = 2;
+        let x = 1 + (a *= 2);
+
+        alert(a);
+        alert(x);
+
+    </script>
+</body>
+
+</html>

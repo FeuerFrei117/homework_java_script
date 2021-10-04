@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+
+        function sum(num_one, num_two) {
+            return num_one + num_two
+        }
+
+        function diff(num_one, num_two) {
+            return num_one - num_two
+        }
+
+        function mult(num_one, num_two) {
+            return num_one * num_two
+        }
+
+        function div(num_one, num_two) {
+            if (num_two === 0) {
+                return 'На ноль делить нельзя!!!'
+            } else {
+                return num_one / num_two
+            }
+        }
+
+        function math_operation(arg_1, arg_2, operation) {
+            switch (operation) {
+                case ('сложение'):
+                    alert(sum(num_one, num_two));
+                    break;
+                case ('вычетание'):
+                    alert(diff(num_one, num_two));
+                    break
+                case ('умножение'):
+                    alert(mult(num_one, num_two));
+                    break;
+                case ('деление'):
+                    alert(div(num_one, num_two));
+                    break;
+            }
+        }
+
+        let num_one = +prompt('Введите первое число:');
+        let num_two = +prompt('Введите второе число:');
+        let action = prompt('Введите одно из возможных действий (сложение, вычетание, умножение, деление):').toLowerCase();
+
+        math_operation(num_one, num_two, action);
+
+    </script>
+</body>
+
+</html>

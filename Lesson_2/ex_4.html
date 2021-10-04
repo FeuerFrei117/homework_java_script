@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+
+        function sum(num_one, num_two) {
+            return num_one + num_two
+        }
+
+        function diff(num_one, num_two) {
+            return num_one - num_two
+        }
+
+        function mult(num_one, num_two) {
+            return num_one * num_two
+        }
+
+        function div(num_one, num_two) {
+            return num_one / num_two
+        }
+
+        let num_one = +prompt('Введите первое число:');
+        let num_two = +prompt('Введите второе число:');
+
+        alert(sum(num_one, num_two));
+        alert(diff(num_one, num_two));
+        alert(mult(num_one, num_two));
+        alert(div(num_one, num_two));
+
+    </script>
+</body>
+
+</html>
