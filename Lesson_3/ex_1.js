@@ -26,7 +26,8 @@ function alert_num(array) {
     for (let i in array) {
         if (i == 0) {
             console.log(`${i} - это ноль`)
-        } else if (i % 2 == 0) {
+        }
+        if (i % 2 == 0) {
             console.log(`${i} - четное число`)
         } else {
             console.log(`${i} - НЕчетное число`)

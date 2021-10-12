@@ -17,20 +17,22 @@ function products_with_photos(arr) {
  */
 function sort_from_high_to_low(arr) {
     // решение №1
-    // let new_arr = arr.sort(function (el_1, el_2) {
-    //     if (el_1.price < el_2.price) {
-    //         return -1;
-    //     } else if (el_1.price > el_2.price) {
-    //         return 1;
-    //     } else {
-    //         return 0;
-    //     }
-    // })
+    let new_arr = arr.sort(function (el_1, el_2) {
+        if (el_1.price < el_2.price) {
+            return -1;
+        }
+        if (el_1.price > el_2.price) {
+            return 1;
+        } else {
+            return 0;
+        }
+    })
 
     // решение №2
-    let new_arr = arr.sort(function (el_1, el_2) {
-        return el_1.price - el_2.price;
-    })
+    // let new_arr = arr.sort(function (el_1, el_2) {
+    //     return el_1.price - el_2.price;
+    // })
+
     console.log(new_arr)
 }
 
