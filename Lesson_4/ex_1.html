@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+
+        // решил сделать 3 варианта, везде решал по разному
+
+        /*
+        function Divisor_by_digits(num) {
+            if (typeof (num) == 'number' && 0 <= num && num <= 999 && num % 1 == 0) {
+                this.hundreds = Math.trunc(num / 100);
+                this.tens = Math.trunc(num % 100 / 10);
+                this.units = num % 10;
+            } else {
+                console.log('Вы ввели не целое число или вообще не число')
+            };
+        }
+        */
+
+        /*
+        function Divisor_by_digits(num) {
+            if (Number.isInteger(num)) {
+                if (0 <= num && num <= 999) {
+                    this.hundreds = Math.trunc(num / 100);
+                    this.tens = Math.trunc(num % 100 / 10);
+                    this.units = num % 10;
+                } else {
+                    console.log('Вы ввели число вне [0, 999] диапазона')
+                }
+            } else {
+                console.log('Вы ввели не целое число или вообще не число')
+            }
+        }
+        */
+
+
+        function Divisor_by_digits(num) {
+            if (typeof (num) == 'number') {
+                if (0 <= num && num <= 999) {
+                    if (num % 1 == 0) {
+                        this.hundreds = Math.trunc(num / 100);
+                        this.tens = Math.trunc(num % 100 / 10);
+                        this.units = num % 10;
+                    } else {
+                        console.log('Вы ввели не целое число')
+                    }
+                } else {
+                    console.log('Вы ввели число вне [0, 999] диапазона')
+                }
+            } else {
+                console.log('Вы ввели не число')
+            }
+
+        };
+
+        const my_num_one = new Divisor_by_digits(45);
+        console.log(my_num_one);
+
+        const my_num_two = new Divisor_by_digits(352);
+        console.log(my_num_two);
+
+        const my_num_three = new Divisor_by_digits(1000);
+        console.log(my_num_three);
+
+        const my_num_four = new Divisor_by_digits('lorem');
+        console.log(my_num_four);
+
+        const my_num_five = new Divisor_by_digits(11.2);
+        console.log(my_num_five);
+
+    </script>
+</body>
+
+</html>

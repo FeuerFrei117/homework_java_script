@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+        // *** ES 5 ***
+        function Product_es5(name, price) {
+            this.name = name;
+            this.price = price;
+        }
+
+        Product_es5.prototype.make25PercentDiscount = function () {
+            this.price = this.price * 0.85;
+        };
+
+        let one_product_es5 = new Product_es5('mars', 35);
+        console.log(one_product_es5);
+        one_product_es5.make25PercentDiscount();
+        console.log(one_product_es5);
+
+        let two_product_es5 = new Product_es5('bounty', 54);
+        console.log(two_product_es5);
+        two_product_es5.make25PercentDiscount();
+        console.log(two_product_es5);
+
+        let three_product_es5 = new Product_es5('snickers', 48);
+        console.log(three_product_es5);
+        three_product_es5.make25PercentDiscount();
+        console.log(three_product_es5);
+
+
+        // ** ES 6 ***
+        class Product_es6 {
+            constructor(name, price) {
+                this.name = name;
+                this.price = price;
+            }
+
+            make25PercentDiscount() {
+                this.price = this.price * 0.85;
+            }
+        }
+
+        let one_product_es6 = new Product_es6('mars', 35);
+        console.log(one_product_es6);
+        one_product_es6.make25PercentDiscount();
+        console.log(one_product_es6);
+
+        let two_product_es6 = new Product_es6('bounty', 54);
+        console.log(two_product_es6);
+        two_product_es6.make25PercentDiscount();
+        console.log(two_product_es6);
+
+        let three_product_es6 = new Product_es6('snickers', 48);
+        console.log(three_product_es6);
+        three_product_es6.make25PercentDiscount();
+        console.log(three_product_es6);
+
+    </script>
+</body>
+
+</html>
