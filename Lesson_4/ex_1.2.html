@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+
+        // *** ES 5 ***
+        function Post_es5(author, text, date) {
+            this.author = author;
+            this.text = text;
+            this.date = date;
+        }
+
+        Post_es5.prototype.edit = function (new_text) {
+            this.text = new_text;
+        };
+
+        function AttachedPost_es5(author, text, date, highlighted = false) {
+            Post_es5.call(this, author, text, date);
+            this.highlighted = highlighted;
+        }
+
+        AttachedPost_es5.prototype = Object.create(Post_es5.prototype);
+        AttachedPost_es5.prototype.constructor = AttachedPost_es5;
+
+        AttachedPost_es5.prototype.makeTextHighlighted_es5 = function () {
+            this.highlighted = true;
+        };
+
+
+        let user_one_es5 = new Post_es5('Oracle', 'lorem...', '12.10.2021');
+        console.log(user_one_es5);
+        user_one_es5.edit('Oracle knows everything');
+        console.log(user_one_es5);
+
+        let user_two_es5 = new Post_es5('Neo', 'lorem...', '11.10.2021');
+        console.log(user_two_es5);
+        user_two_es5.edit('You have a letter, Neo');
+        console.log(user_two_es5);
+
+        let user_three_es5 = new AttachedPost_es5('Agent Smith', 'lorem...', '12.10.2021');
+        console.log(user_three_es5);
+        user_three_es5.edit('Agent Smith is watching you');
+        console.log(user_three_es5);
+        user_three_es5.makeTextHighlighted_es5();
+        console.log(user_three_es5);
+
+        let user_four_es5 = new AttachedPost_es5('Morpheus', 'lorem...', '13.10.2021', false);
+        console.log(user_four_es5);
+        user_four_es5.edit('Morpheus is searching for Neo');
+        console.log(user_four_es5);
+        user_four_es5.makeTextHighlighted_es5();
+        console.log(user_four_es5);
+
+
+        // *** ES 6 ***
+        class Post_es6 {
+            constructor(author, text, date) {
+                this.author = author;
+                this.text = text;
+                this.date = date;
+            }
+
+            edit(new_text) {
+                this.text = new_text;
+            };
+        }
+
+        class AttachedPost_es6 extends Post_es6 {
+            constructor(author, text, date, highlighted = false) {
+                super(author, text, date);
+                this.highlighted = highlighted;
+            }
+
+            makeTextHighlighted_es6() {
+                this.highlighted = true;
+            };
+        }
+
+        let user_one_es6 = new Post_es6('Oracle', 'lorem...', '12.10.2021');
+        console.log(user_one_es6);
+        user_one_es6.edit('Oracle knows everything');
+        console.log(user_one_es6);
+
+        let user_two_es6 = new Post_es6('Neo', 'lorem...', '11.10.2021');
+        console.log(user_two_es6);
+        user_two_es6.edit('You have a letter, Neo');
+        console.log(user_two_es6);
+
+        let user_three_es6 = new AttachedPost_es6('Agent Smith', 'lorem...', '12.10.2021');
+        console.log(user_three_es6);
+        user_three_es6.edit('Agent Smith is watching you');
+        console.log(user_three_es6);
+        user_three_es6.makeTextHighlighted_es6();
+        console.log(user_three_es6);
+
+        let user_four_es6 = new AttachedPost_es6('Morpheus', 'lorem...', '13.10.2021', false);
+        console.log(user_four_es6);
+        user_four_es6.edit('Morpheus is searching for Neo');
+        console.log(user_four_es6);
+        user_four_es6.makeTextHighlighted_es6();
+        console.log(user_four_es6);
+
+    </script>
+</body>
+
+</html>

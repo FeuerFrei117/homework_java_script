@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Выполнил два решения
+        'use strict';
+
+        function price_corrector(arr) {
+            arr.price = arr.price * 0.85;
+        }
+
+        const products_one = [
+            {
+                id: 3,
+                price: 200,
+            },
+            {
+                id: 4,
+                price: 900,
+            },
+            {
+                id: 1,
+                price: 1000,
+            },
+        ];
+
+        const products_two = [
+            {
+                id: 3,
+                price: 200,
+            },
+            {
+                id: 4,
+                price: 900,
+            },
+            {
+                id: 1,
+                price: 1000,
+            },
+        ];
+
+        products_one.forEach(price_corrector);
+
+        products_two.forEach(function (arr) {
+            arr.price = arr.price * 0.85;
+        })
+
+        console.log(products_one);
+
+        console.log(products_two);
+
+    </script>
+</body>
+
+</html>
